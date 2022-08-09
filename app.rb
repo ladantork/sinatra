@@ -34,8 +34,17 @@ class Application < Sinatra::Base
     return "Thanks #{name}, you sent this message: '#{message}'"
  end
 
+get '/names' do
+return "Julia, Mary, Karim"
 end
 
+
+post '/sort-names' do
+    response = params[:names]
+    response.split(",").sort.join(",")
+   end
+ 
+end
 # Incoming request: GET/todos/1
 # Routes: 
 
